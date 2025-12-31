@@ -17,7 +17,7 @@ Visit [malatenszki.github.io/AgentBridge](https://malatenszki.github.io/AgentBri
 
 1. **Get the macOS daemon**
    ```bash
-   git clone https://github.com/malatenszki/AgentBridge.git
+   git clone https://github.com/malatenszki/agent-bridge.git
    cd macos-daemon
    swift build -c release
    ```

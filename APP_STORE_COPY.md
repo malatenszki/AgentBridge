@@ -194,7 +194,7 @@ To test Agent Bridge, you'll need both the iOS app and the macOS daemon:
    The macOS daemon is required to test the app.
 
    Build from source:
-   - Clone: https://github.com/malatenszki/AgentBridge
+   - Clone: https://github.com/malatenszki/agent-bridge
    - Navigate to macos-daemon/
    - Run: swift build -c release
    - Run: .build/release/agent-bridge
