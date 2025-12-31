@@ -295,17 +295,23 @@
 
         <!-- Quick Start -->
         <div class="card">
-            <div class="card-header">quick start</div>
+            <div class="card-header">install on mac/linux</div>
 
-            <p style="color: #888; margin-bottom: 20px;">Get the macOS daemon from GitHub:</p>
+            <p style="color: #888; margin-bottom: 15px;">Install script (cross-platform):</p>
             <div class="code-block">
-                <code><span class="code-comment"># Clone and build the daemon</span>
-git clone https://github.com/malatenszki/agent-bridge.git
-cd agent-bridge/macos-daemon
-swift build -c release
+                <code><span class="code-comment"># Mac & Linux</span>
+curl -fsSL https://raw.githubusercontent.com/malatenszki/agent-bridge/main/install.sh | bash</code>
+            </div>
 
-<span class="code-comment"># Run it</span>
-.build/release/agent-bridge</code>
+            <p style="color: #888; margin-top: 20px; margin-bottom: 15px;">Or use Homebrew (Mac only):</p>
+            <div class="code-block">
+                <code>brew tap malatenszki/agent-bridge
+brew install agent-bridge</code>
+            </div>
+
+            <p style="color: #888; margin-top: 20px; margin-bottom: 15px;">Run the daemon:</p>
+            <div class="code-block">
+                <code>agent-bridge</code>
             </div>
 
             <p style="color: #888; margin-top: 20px;">Then open the Agent Bridge app on your iPhone and scan the QR code shown in Terminal.</p>
