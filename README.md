@@ -33,7 +33,7 @@ Visit [malatenszki.github.io/AgentBridge](https://malatenszki.github.io/AgentBri
 
 ## ✨ Features
 
-- **Real-Time Monitoring** - Stream terminal output to your iPhone
+- **Terminal Monitoring** - Stream terminal output to your iPhone
 - **Smart Notifications** - Get alerts when agents need input or finish tasks
 - **Private & Secure** - All data stays on your local WiFi network
 - **Session Management** - Handle multiple agent sessions simultaneously

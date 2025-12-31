@@ -63,11 +63,11 @@ Agent Bridge respects your privacy. All data stays on your local network. We don
 
 ### Version 2 (Detailed)
 ```
-Monitor and control AI agents running on your Mac directly from your iPhone. Agent Bridge provides a seamless connection between your devices, giving you real-time access to terminal sessions wherever you are.
+Monitor and interact with AI agents running on your Mac directly from your iPhone. Agent Bridge provides a seamless connection between your devices, letting you view terminal sessions wherever you are.
 
 CORE FEATURES
 
-Real-Time Terminal Streaming
+Terminal Monitoring
 • Watch AI agent output as it happens
 • Full terminal history available on demand
 • Auto-scroll to latest output
