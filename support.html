@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - Agent Bridge</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 { color: #2c3e50; margin-bottom: 10px; font-size: 2em; }
+        h2 { color: #34495e; margin-top: 30px; margin-bottom: 15px; font-size: 1.5em; }
+        h3 { color: #546e7a; margin-top: 20px; margin-bottom: 10px; }
+        p { margin-bottom: 15px; }
+        ul { margin-left: 20px; margin-bottom: 15px; }
+        li { margin-bottom: 8px; }
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+        pre {
+            background: #2c3e50;
+            color: #4caf50;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 15px 0;
+            font-family: 'Monaco', 'Courier New', monospace;
+        }
+        .faq {
+            background: #e3f2fd;
+            padding: 20px;
+            border-left: 4px solid #2196f3;
+            margin: 20px 0;
+        }
+        .warning {
+            background: #fff3cd;
+            padding: 15px;
+            border-left: 4px solid #ffc107;
+            margin: 20px 0;
+        }
+        .contact {
+            background: #e8f5e9;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+        a { color: #3498db; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .button {
+            display: inline-block;
+            background: #4caf50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin: 10px 10px 10px 0;
+        }
+        .button:hover { background: #45a049; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Agent Bridge Support</h1>
+        <p>Need help? You're in the right place. This guide covers setup, troubleshooting, and common questions.</p>
+
+        <h2>Quick Start</h2>
+
+        <h3>1. Get the macOS Daemon</h3>
+        <p>Download from GitHub:</p>
+        <pre>git clone https://github.com/malatenszki/AgentBridge.git
+cd AgentBridge/macos-daemon
+swift build -c release</pre>
+
+        <h3>2. Start the Daemon</h3>
+        <pre>.build/release/agent-bridge</pre>
+
+        <h3>3. Pair Your iPhone</h3>
+        <ul>
+            <li>Open the Agent Bridge app on your iPhone</li>
+            <li>Tap "Pair New Device" in Settings</li>
+            <li>Scan the QR code shown in the Terminal</li>
+        </ul>
+
+        <h2>System Requirements</h2>
+        <ul>
+            <li><strong>macOS:</strong> macOS 13.0 (Ventura) or later</li>
+            <li><strong>iOS:</strong> iOS 16.0 or later</li>
+            <li><strong>Network:</strong> Both devices must be on the same WiFi network</li>
+            <li><strong>Port:</strong> Port 8765 must be available (configurable)</li>
+        </ul>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq">
+            <h3>Why can't I see the pairing QR code?</h3>
+            <p>Make sure:</p>
+            <ul>
+                <li>The daemon is running (<code>agent-bridge</code>)</li>
+                <li>You're running it in a terminal with QR code support</li>
+                <li>Port 8765 is not already in use</li>
+            </ul>
+        </div>
+
+        <div class="faq">
+            <h3>The QR code expired - what do I do?</h3>
+            <p>Pairing codes expire after 60 seconds for security. Simply restart the daemon to generate a new QR code:</p>
+            <pre>agent-bridge</pre>
+        </div>
+
+        <div class="faq">
+            <h3>I can't connect to my Mac</h3>
+            <p>Check these common issues:</p>
+            <ul>
+                <li><strong>WiFi:</strong> Both devices must be on the same WiFi network (not cellular data)</li>
+                <li><strong>Firewall:</strong> macOS Firewall might be blocking connections - allow agent-bridge in System Settings → Network → Firewall</li>
+                <li><strong>Daemon Running:</strong> Make sure <code>agent-bridge</code> is still running on your Mac</li>
+                <li><strong>Port:</strong> Another app might be using port 8765 - try restarting the daemon</li>
+            </ul>
+        </div>
+
+        <div class="faq">
+            <h3>How do I enable notifications?</h3>
+            <ol>
+                <li>Open Agent Bridge on iPhone</li>
+                <li>Go to Settings (gear icon)</li>
+                <li>Toggle "Push Notifications"</li>
+                <li>Allow notifications when iOS prompts you</li>
+            </ol>
+        </div>
+
+        <div class="faq">
+            <h3>Can I use this over the internet?</h3>
+            <p>No. Agent Bridge is designed to work only on your local WiFi network for security and privacy. Your data never leaves your local network.</p>
+        </div>
+
+        <div class="faq">
+            <h3>How do I unpair my iPhone?</h3>
+            <ol>
+                <li>Open Agent Bridge on iPhone</li>
+                <li>Go to Settings</li>
+                <li>Tap "Unpair"</li>
+                <li>Confirm the action</li>
+            </ol>
+        </div>
+
+        <h2>Troubleshooting</h2>
+
+        <h3>Daemon Won't Start</h3>
+        <p><strong>Error: Port already in use</strong></p>
+        <p>Another process is using port 8765. Find and stop it:</p>
+        <pre>lsof -i :8765
+kill [PID from above command]</pre>
+        <p>Or specify a different port:</p>
+        <pre>AGENT_BRIDGE_PORT=8766 agent-bridge</pre>
+
+        <h3>Connection Drops Frequently</h3>
+        <ul>
+            <li>Check WiFi signal strength on both devices</li>
+            <li>Ensure your Mac doesn't go to sleep (disable sleep in System Settings)</li>
+            <li>Check for WiFi interference or network issues</li>
+        </ul>
+
+        <h3>Sessions Not Appearing</h3>
+        <ul>
+            <li>Refresh by pulling down on the session list</li>
+            <li>Check that the daemon is still running</li>
+            <li>Restart the iPhone app</li>
+        </ul>
+
+        <div class="warning">
+            <strong>⚠️ Firewall Warning</strong>
+            <p>If you're using macOS Firewall or third-party security software, you may need to allow incoming connections for <code>agent-bridge</code>.</p>
+        </div>
+
+        <h2>Advanced Configuration</h2>
+
+        <h3>Custom Port</h3>
+        <pre>export AGENT_BRIDGE_PORT=8766
+agent-bridge</pre>
+
+        <h3>Daemon Logs</h3>
+        <p>The daemon outputs logs to the terminal. For verbose logging, check the daemon's standard output.</p>
+
+        <h2>Known Limitations</h2>
+        <ul>
+            <li>Requires WiFi connection (cellular data not supported)</li>
+            <li>Works only on local network (no remote access)</li>
+            <li>macOS daemon must remain running for connections</li>
+        </ul>
+
+        <h2>Privacy & Security</h2>
+        <p>Agent Bridge takes your privacy seriously:</p>
+        <ul>
+            <li>All data stays on your local network</li>
+            <li>No cloud services or external servers</li>
+            <li>Pairing tokens expire after 60 seconds</li>
+            <li>Secure storage using Keychain</li>
+        </ul>
+        <p><a href="privacy.html">Read our full Privacy Policy →</a></p>
+
+        <div class="contact">
+            <h2>Still Need Help?</h2>
+            <p>We're here to help! Contact us:</p>
+            <p><strong>Email:</strong> <a href="mailto:support@agentbridge.io">support@agentbridge.io</a></p>
+            <p><strong>GitHub Issues:</strong> <a href="https://github.com/malatenszki/agentbridge/issues">Report a bug or request a feature</a></p>
+
+            <p style="margin-top: 20px;">When reporting issues, please include:</p>
+            <ul>
+                <li>macOS version</li>
+                <li>iOS version</li>
+                <li>Agent Bridge version (found in Settings)</li>
+                <li>Description of the problem</li>
+                <li>Steps to reproduce</li>
+            </ul>
+        </div>
+
+        <h2>Useful Links</h2>
+        <a href="index.html" class="button">Home</a>
+        <a href="privacy.html" class="button">Privacy Policy</a>
+        <a href="https://github.com/malatenszki/agentbridge" class="button">GitHub</a>
+    </div>
+</body>
+</html>
